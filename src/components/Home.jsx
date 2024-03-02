@@ -1,8 +1,10 @@
 import React from "react";
+import Header from "./Header";
 
 function Home() {
   return (
     <>
+    <Header/>
       <section class="pt-20 md:pt-40">
         <div class="container mx-auto px-8 lg:flex">
           <div class="text-center lg:text-left lg:w-1/2">
