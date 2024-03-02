@@ -31,15 +31,34 @@ function Capture() {
         ) : (
           <img src={image} />
         )}
-        <button
-          className=" bg-black px-4 py-3 text-white m-4 rounded"
-          onClick={(e) => {
-            e.preventDefault();
-            capture();
-          }}
-        >
-          Capture
-        </button>
+        {image != "" ? (
+            <>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+
+              setImage("");
+            }}
+            className=" bg-black text-white px-4 py-3 rounded m-3"
+          >
+            Retake Image
+          </button>
+          <button className=" bg-green-700 rounded text-white px-4 py-3 ">
+            Done
+          </button>
+          </>
+        ) : (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+
+              capture();
+            }}
+            className=" bg-blue-800 text-white px-4 py-3 rounded m-3"
+          >
+            Capture
+          </button>
+        )}
       </div>
     </div>
   );
